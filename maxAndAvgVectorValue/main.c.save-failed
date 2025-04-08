@@ -1,0 +1,30 @@
+
+#include <stdio.h>
+
+int main (void)
+{
+	int vectorA[6];
+	int maxValue = 0;
+	int avgValue = 0;
+
+	for (int i = 0; i < 6; i++)
+	{
+		printf("\nDigite um valor para a posição %d do vetor A: ", i);
+		scanf("%d", &vectorA[i]);
+	}
+
+	maxValue = vectorA[0];
+
+	for (int i = 0; i < 6; i++)
+	{
+		if (vectorA[i] < maxValue)
+			continue;
+
+		if (vectorA[i] > vectorA[i + 1] && vectorA[i + 1] < 7)
+			vectorA[i] = maxValue;
+	}
+
+	printf("Dado o vetor: %d %d %d %d %d %d", vectorA[0], vectorA[1], vectorA[2], vectorA[3], vectorA[4], vectorA[5]);
+	printf("Seu valor máximo é: %d", maxValue);
+	printf("E a média dos valores é: %d", avgValue);
+}
